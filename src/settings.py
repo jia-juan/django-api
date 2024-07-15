@@ -176,6 +176,7 @@ REST_FRAMEWORK = {
     ),
 }
 
+
 # Simple JWT settings
 
 SIMPLE_JWT = {
@@ -205,4 +206,6 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+
+    'TOKEN_OBTAIN_SERIALIZER': 'utils.username_display_in_jwt_serializer.UsernameDisplayInJwtSerializer',
 }
